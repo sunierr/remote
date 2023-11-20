@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  async function handleClick(e) {
+    console.log('working')
+    try {
+      await fetch('http://10.60.25.24:3001/'+e.target.value, {
+        method: "GET", 
+        mode: "no-cors"
+      });
+      console.log("request sent");
+    } catch (error) {
+      console.error("Error:", error); 
+    }
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <button className='button-30' value="0" onClick={handleClick}>左</button>
+     <button className='button-30' value="1" onClick={handleClick}>右</button>
+     <button className='button-30' value="2" onClick={handleClick}>确认</button>
+     <button className='button-30' value="3" onClick={handleClick}>关闭</button>
     </div>
   );
 }
