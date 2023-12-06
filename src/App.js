@@ -21,16 +21,16 @@ function App() {
   //   }
   // };
 
-  const myUrl = 'http://10.60.25.24:3001/';
+  const myUrl = 'http://192.168.0.100:3001/';
   async function handleClick(e) {
     console.log('working')
-    var holder = parseInt(e.currentTarget.value);  
-    if(clickable){
-      if(holder===2){
+    var holder = parseInt(e.currentTarget.value);
+    if (clickable) {
+      if (holder === 2) {
         console.log(2222)
         setClickable(0);
       };
-      if(holder===3){
+      if (holder === 3) {
         return;
       }
       try {
@@ -44,13 +44,13 @@ function App() {
       }
     } else {
       console.log(1111111111111)
-      if(holder===0||holder===1||holder===2){
+      if (holder === 0 || holder === 1 || holder === 2) {
         return;
-      } else if (holder===4){
-        holder=6
-      } else if (holder===5){
-        holder=7
-      } else if (holder===3){
+      } else if (holder === 4) {
+        holder = 6
+      } else if (holder === 5) {
+        holder = 7
+      } else if (holder === 3) {
         setClickable(1);
       }
       try {
@@ -63,7 +63,7 @@ function App() {
         console.error("Error:", error);
       }
     }
-    
+
   };
   return (
     <div className="App">
@@ -76,9 +76,13 @@ function App() {
 
       </div>
       <div>
+
         <button className='button-30' value="3" onClick={handleClick}><span>返回</span></button>
       </div>
-
+      <div>
+        <button className='button-30' value="8" onClick={handleClick}><span>上一页</span></button>
+        <button className='button-30' value="9" onClick={handleClick}><span>下一页</span></button>
+      </div>
     </div>
   );
 }
