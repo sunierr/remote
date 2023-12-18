@@ -21,7 +21,7 @@ function App() {
   //   }
   // };
 
-  const myUrl = 'http://192.168.0.100:3001/';
+  const myUrl = 'http://10.60.25.195:3001/';
   async function handleClick(e) {
     console.log('working')
     var holder = parseInt(e.currentTarget.value);
